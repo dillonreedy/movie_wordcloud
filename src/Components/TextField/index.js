@@ -4,14 +4,13 @@ import { TextField } from '@material-ui/core';
 function CalculatorTextField(props) {
     return (
         <TextField id="outlined-basic" 
-                   label="Input Here" 
+                   label={props.label} 
                    variant="outlined"
                    value={props.value}
                    onChange={props.onChange}
                    error={props.error}
                    helperText={props.errorText}
-                   fullWidth
-                   multiline/>
+                   fullWidth/>
       );
 }
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import WordCloud from './Scenes/WordCloud/index';
+import Home from './Scenes/Home/index';
 
 function App() {
   return (
     <div className="App">
-      <WordCloud />
+      <Home />
     </div>
   );
 }

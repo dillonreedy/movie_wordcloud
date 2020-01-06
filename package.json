@@ -4,16 +4,18 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.8.0",
+    "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.38",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "movies-names": "^1.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
+    "react-wordcloud": "^1.1.1",
     "styled-components": "^4.4.1"
   },
   "scripts": {
@@ -21,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:update": "react-scripts test --updateSnapshot"
+    "test:update": "react-scripts test --updateSnapshot",
+    "server": "node-env-run server --exec nodemon | pino-colada"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +43,6 @@
   },
   "devDependencies": {
     "react-test-renderer": "^16.12.0"
-  }
+  },
+  "proxy": "https://www.reddit.com"
 }
