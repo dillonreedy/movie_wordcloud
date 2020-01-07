@@ -23,3 +23,10 @@ NOTE: This web application runs in tandem with the server application [reddit_po
 ### Demo of Successfully Generating Wordcloud
 Below is a demonstration of a user inputting the name of a subreddit and then a word cloud being successfully generated.
 ![A demo of successfully generating a word cloud](https://github.com/dillonreedy/movie_wordcloud/blob/master/demo_gifs/sucess_wordcloud_creation.gif)
+
+
+### Error feedback for when textfield is empty
+Below is a demonstration of error feedback when the user attempts to input the empty string in to the textfield componenet.
+![Error feedback for no input](https://github.com/dillonreedy/movie_wordcloud/blob/master/demo_gifs/noinput_error.gif)
+
+### Error feedback when subreddit has no data
