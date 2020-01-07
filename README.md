@@ -30,3 +30,5 @@ Below is a demonstration of error feedback when the user attempts to input the e
 ![Error feedback for no input](https://github.com/dillonreedy/movie_wordcloud/blob/master/demo_gifs/noinput_error.gif)
 
 ### Error feedback when subreddit has no data
+Below is a demonstration of error feedback for when the user attempts to input a subreddit that does not contain any data.
+![Error feedback for no subreddit data](https://github.com/dillonreedy/movie_wordcloud/blob/master/demo_gifs/nodata_error.gif)
