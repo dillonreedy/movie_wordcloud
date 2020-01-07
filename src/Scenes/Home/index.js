@@ -15,18 +15,19 @@ function Home() {
         setTextFieldValue(e.target.value);
     };
 
+    var setStateValues = function(props) {
+        setWords(props.words);
+        setServiceError(props.serviceError);
+        setServiceErrorMsg(props.serviceErrorMsg);
+        setLoading(props.loading);
+    };
+
     const handleClick = (e) => {
         setLoading(true);
         SnoowrapService.getSubredditPostTitles(textFieldValue).then(resp => {
-            setWords(resp.data);                
-            setServiceError(false);
-            setServiceErrorMsg('');
-            setLoading(false);
+            setStateValues({ words: resp.data, serviceError: false, serviceErrorMsg: '', loading: false});
         }).catch((e) => {
-            setWords([]);
-            setServiceError(true);
-            setServiceErrorMsg(e.response.data);
-            setLoading(false);
+            setStateValues({ words: [], serviceError: true, serviceErrorMsg: e.response.data, loading: false});
         });
     }
 
