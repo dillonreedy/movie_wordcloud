@@ -22,4 +22,4 @@ NOTE: This web application runs in tandem with the server application [reddit_po
 
 ### Demo of Successfully Generating Wordcloud
 Below is a demonstration of a user inputting the name of a subreddit and then a word cloud being successfully generated.
-![A demo of successfully generating a word cloud](https://github.com/dillonreedy/movie_wordcloud/demo_gifs/success_wordcloud_creation.gif)
+![A demo of successfully generating a word cloud](https://github.com/dillonreedy/movie_wordcloud/blob/master/demo_gifs/sucess_wordcloud_creation.gif)
