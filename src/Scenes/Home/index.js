@@ -7,6 +7,8 @@ import SnoowrapService from '../../Services/SnoowrapService';
 function Home() {
     const [textFieldValue, setTextFieldValue] = React.useState('');
     const [words, setWords] = React.useState([]);
+    const [serviceError, setServiceError] = React.useState(false);
+    const [serviceErrorMsg, setServiceErrorMsg] = React.useState('');
 
     const handleChange = (e) => {
         setTextFieldValue(e.target.value);
@@ -14,7 +16,12 @@ function Home() {
 
     const handleClick = (e) => {
         SnoowrapService.getSubredditPostTitles(textFieldValue).then(resp => {
-            setWords(resp.data);
+            setWords(resp.data);                
+            setServiceError(false);
+            setServiceErrorMsg('');
+        }).catch((e) => {
+            setServiceError(true);
+            setServiceErrorMsg(e.response.data);
         });
     }
 
@@ -29,6 +36,8 @@ function Home() {
             <SearchBar  textFieldValue={textFieldValue}
                         onChange={handleChange}
                         onClick={handleClick}
+                        error={serviceError}
+                        errorText={serviceErrorMsg}
                         />
             <WordCloud words={words}/>
         </Grid>

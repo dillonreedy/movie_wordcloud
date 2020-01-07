@@ -11,8 +11,8 @@ function SearchBar(props) {
             <TextField  label="Input subreddit name"
                         value={props.textFieldValue}
                         onChange={props.onChange}
-                        error={false}
-                        errorText=''
+                        error={props.error}
+                        errorText={props.errorText}
                         />
             <IconButton onClick={props.onClick}>
                 <SearchIcon />
