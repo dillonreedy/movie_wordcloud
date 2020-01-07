@@ -15,7 +15,7 @@ function Home() {
         setTextFieldValue(e.target.value);
     };
 
-    var setStateValues = function(props) {
+    const setStateValues = (props) => {
         setWords(props.words);
         setServiceError(props.serviceError);
         setServiceErrorMsg(props.serviceErrorMsg);
