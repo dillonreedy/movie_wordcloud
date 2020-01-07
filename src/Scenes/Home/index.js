@@ -9,19 +9,24 @@ function Home() {
     const [words, setWords] = React.useState([]);
     const [serviceError, setServiceError] = React.useState(false);
     const [serviceErrorMsg, setServiceErrorMsg] = React.useState('');
+    const [loading, setLoading] = React.useState(false);
 
     const handleChange = (e) => {
         setTextFieldValue(e.target.value);
     };
 
     const handleClick = (e) => {
+        setLoading(true);
         SnoowrapService.getSubredditPostTitles(textFieldValue).then(resp => {
             setWords(resp.data);                
             setServiceError(false);
             setServiceErrorMsg('');
+            setLoading(false);
         }).catch((e) => {
+            setWords([]);
             setServiceError(true);
             setServiceErrorMsg(e.response.data);
+            setLoading(false);
         });
     }
 
@@ -39,7 +44,7 @@ function Home() {
                         error={serviceError}
                         errorText={serviceErrorMsg}
                         />
-            <WordCloud words={words}/>
+            <WordCloud isLoading={loading} words={words}/>
         </Grid>
     </div>
     );

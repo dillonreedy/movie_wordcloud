@@ -1,5 +1,8 @@
 import React from "react";
 import ReactWordcloud from "react-wordcloud";
+import CircularProgress from '@material-ui/core/CircularProgress';
+// import { Grid } from '@material-ui/core';
+
 
 
 const options = {
@@ -17,11 +20,19 @@ const options = {
   transitionDuration: 1000
 };
 
+function comp(props) {
+  if (props.isLoading) return (<CircularProgress/>);
+
+  return (<ReactWordcloud options={options} words={props.words} />);
+}
+
 function WordCloud(props) {
+
+
   return (
     <div>
-      <div style={{ height: 800, width: 800 }}>
-        <ReactWordcloud options={options} words={props.words} />
+      <div style={{ height: 500, width: 500, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        {comp(props)}
       </div>
     </div>
   );
